@@ -196,6 +196,10 @@ keystone_fernet_setup:
 
 {% endif %}
 
+keystone_sleep:
+  cmd.run:
+  - name: sleep 1
+
 {%- if not grains.get('noservices', False) %}
 keystone_service_tenant:
   keystone.tenant_present:
